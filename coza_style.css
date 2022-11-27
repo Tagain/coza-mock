@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    width: 100%;
 }
 
 .logo {
@@ -8,7 +9,7 @@ html, body {
 }
 
 * {
-    outline: 1px solid red;
+    outine: 1px solid red;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -21,7 +22,7 @@ html, body {
 }
 
 nav {
-    background-color: rgba(255, 255, 255, 0.233);
+    background-color: rgba(255, 255, 255, 0.267);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,19 +42,39 @@ nav {
 
 .nav_links li {
     display: inline-block;
+    position: relative;
+    color: black;
     padding: 5px 10px;
     margin: 0 5px;
 }
 
 .nav_links li a {
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     transition: all 0.3s ease 0s;
 }
 
 .nav_links li a:hover {
-    color: rgb(128, 0, 96);
+    color: rgb(241, 241, 241);
+}
+
+.nav_links li::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(83, 28, 83);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav_links li:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom right;
 }
 
 .hero-text {
@@ -72,7 +93,7 @@ nav {
     width: 100px;
     text-align: right;
     color: white;
-    font-family: serif;
+    font-family: lato, sans-serif;
     margin: 30px;
     animation-name: slide-right;
     animation-duration: 1.8s;
@@ -91,7 +112,7 @@ nav {
     width: 510px;
     font-size: 45px;
     color: white;
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     animation-name: slide-left1;
     animation-duration: 1.8s;
 }
@@ -112,6 +133,7 @@ nav {
     border: 2px solid rgb(233, 190, 0);
     color: white;
     font-weight: bold;
+    font-family: poppins, sans-serif;
     background-color: transparent;
     cursor: pointer;
     transition: .3s;
@@ -149,6 +171,43 @@ nav {
     margin: 80px auto;
 }
 
+/*.info1-text::after {
+    background: rgba(128, 0, 128, 0.158);
+    content: '';
+    position: absolute;
+    width: 25%;
+    height: 6%;
+    left: 50%;
+    top: 125%;
+    animation: reveal 1.5s cubic-bezier(0.19, 0.22, 1);
+}
+
+.info1 a::after {
+    background: rgba(128, 0, 128, 0.158);
+    content: '';
+    position: absolute;
+    width: 17%;
+    height: 15%;
+    left: 50%;
+    top: 134%;
+    animation: reveal 1.5s cubic-bezier(0.19, 0.22, 1);
+}
+
+@keyframes reveal {
+    0% {
+        left: 0;
+        width: 0;
+    }
+    50% {
+        left: 0;
+        width: 100%;
+    }
+    100% {
+        left: 100%;
+        width: 100%;
+    }
+}*/
+
 .image1 {
     width: 350px;
     height: 350px;
@@ -157,23 +216,25 @@ nav {
 }
 
 .info1 {
-    width: 260px;
+    width: 300px;
     margin-right: 40px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .info1-text {
-    color: black;
+    color: rgb(51, 10, 51);
     font-family: sans-serif;
     font-size: 35px;
+    font-family: poppins, sans-serif;
+    font-weight: bold;
     margin-bottom: 20px;
 }
 
 .info1 a {
     text-decoration: none;
     font-size: 13.5px;
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     margin: 10px 0;
     padding: 10px 30px;
     background-color: rgb(117, 26, 117);
@@ -210,22 +271,23 @@ nav {
 }
 
 .info2 h6 {
-    color: rgb(117, 26, 117);
-    font-family: sans-serif;
+    color: rgb(51, 10, 51);
+    font-family: poppins, sans-serif;
     font-weight: bold;
     margin-bottom: 20px;
 }
 
 .info2 h2 {
-    color: #331f49;
-    font-family: sans-serif;
+    color: rgb(51, 10, 51);
+    font-family: poppins, sans-serif;
     margin-bottom: 20px;
 }
 
 .info2 p {
     width: 300px;
     font-size: 14px;
-    font-family: sans-serif;
+    font-family: montserrat, sans-serif;
+    font-weight: 200;
     text-align: left;
     margin-bottom: 20px;
 }
@@ -233,7 +295,7 @@ nav {
 .info2 a {
     text-decoration: none;
     color: white;
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     font-size: 13.5px;
     background-color: rgb(117, 26, 117);
     padding: 10px 30px;
@@ -247,7 +309,11 @@ nav {
 }
 
 .content-3 {
-    background-image: url(./images/worship.jpg);
+    background-image: url(./images/wide.jpg);
+    background-color: rgb(92, 79, 92);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 1200px;
     height: 400px;
     margin: 100px auto;
@@ -264,20 +330,21 @@ nav {
 }
 
 .info3 h4 {
+    color: white;
     margin: 0 auto;
     align-items: center;
     text-transform: uppercase;
-    font-family: sans-serif;
+    font-family: lato, sans-serif;
     text-align: center;
     margin-bottom: 40px;
     width: 170px;
 }
 
 .info3 h1 {
-    color: black;
+    color: white;
     font-size: 60px;
     font-weight: bolder;
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -286,7 +353,7 @@ nav {
     align-items: center;
     text-decoration: none;
     color: #331f49;
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     font-size: 13.5px;
     font-weight: bold;
     background-color: white;
@@ -304,7 +371,7 @@ nav {
 }
 
 .content-4 {
-    width: 1000px;
+    width: 80%;
     align-items: center;
     margin: 100px auto;
     margin-bottom: 40px;
@@ -313,7 +380,9 @@ nav {
 }
 
 .info4 {
-    background-image: url(./images/image2.jpg);
+    background-image: url(./images/block1.jpg);
+    background-color: rgb(92, 79, 92);
+    background-blend-mode: multiply;
     border-radius: 20px;
     height: 400px;
     width: 650px;
@@ -329,17 +398,19 @@ nav {
 }
 
 .info4-text h1 {
-    font-family: sans-serif;
-    color: black;
+    font-family: poppins, sans-serif;
+    color: white;
     margin-bottom: 20px;
 }
 
 .info4-text p{
+    color: white;
+    font-family: lato, sans-serif;
     margin-bottom: 20px;
 }
 
 .info4-text a {
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     font-size: 12px;
     font-weight: bold;
     text-decoration: none;
@@ -372,7 +443,7 @@ nav {
 }
 
 th {
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     font-size: 25px;
     text-align: left;
     padding: 35px 35px 10px 30px;
@@ -380,6 +451,7 @@ th {
 }
 
 .th-text {
+    font-family: lato, sans-serif;
     font-weight: normal;
     font-size: 13px;
     text-align: left;
@@ -389,7 +461,7 @@ th {
 
 td {
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     font-size: 15px;
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.205);
@@ -414,13 +486,16 @@ td:hover {
 }
 
 .info5 {
-    background-image: url(./images/image2.jpg);
+    background-image: url(./images/block2.jpg);
+    background-color: rgb(92, 79, 92);
+    background-blend-mode: multiply;
     border-radius: 20px;
     height: 600px;
     width: 650px;
 }
 
 .info5-text {
+    color: white;
     display: flex;
     flex-wrap: wrap;
     width: 340px;
@@ -430,17 +505,18 @@ td:hover {
 }
 
 .info5-text h1 {
-    font-family: sans-serif;
-    color: black;
+    font-family: poppins, sans-serif;
+    color: white;
     margin-bottom: 20px;
 }
 
 .info5-text p{
+    font-family: lato, sans-serif;
     margin-bottom: 20px;
 }
 
 .info5-text a {
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     font-size: 12px;
     font-weight: bold;
     text-decoration: none;
@@ -473,7 +549,7 @@ td:hover {
 }
 
 .start {
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     font-size: 23px;
     text-align: left;
     padding: 35px 35px 10px 30px;
@@ -481,6 +557,7 @@ td:hover {
 }
 
 .th-text {
+    font-family: lato, sans-serif;
     font-weight: normal;
     font-size: 13px;
     text-align: left;
@@ -490,7 +567,7 @@ td:hover {
 
 td {
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     font-size: 15px;
     text-align: center;
     border-bottom: 1px solid rgba(0, 0, 0, 0.205);
@@ -525,19 +602,19 @@ td a {
 }
 
 .info6 h1 {
-    font-family: sans-serif;
+    font-family: poppins, sans-serif;
     color: white;
     margin-bottom: 20px;
 }
 
 .info6 h4 {
-    font-family: sans-serif;
+    font-family: montserrat, sans-serif;
     color: white;
     margin-bottom: 20px;
 }
 
 .info6 p {
-    font-family: sans-serif;
+    font-family: montserrat, sans-serif;
     color: white;
     font-size: 14px;
     text-align: center;
@@ -569,44 +646,101 @@ td a {
 
 .registration {
     background-color: transparent;
-    width: 60%;
+    width: 40%;
     min-width: 420px;
     padding: 35px 50px;
     transform: translate(-50% -50%);
     position: relative;
-    left: 20%;
-    top: 30%;
+    left: 30%;
+    top: 25%;
     border-radius: 10px;
 }
 
-/*forml {
-    width: 100%;
-    position: relative;
-    margin: 30px auto 0 auto;
-}
-
-.row {
-    width: fit-content;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    grid-gap: 20px 30px;
-}
-
-.column {
-    width: fit-content;
-    display: grid;
-    grid-gap: 20px 30px;
-}*/
-
 form {
-    width: 700px;
-    margin: 10px auto;
+    width: 453px;
+    margin: 0 -6px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.column1 {
+.reg {
+    margin: 1.5px 1.5px;
+}
+
+.full-name {
+    width: 450px;
     height: 40px;
-    width: 700px;
-    padding: 10px 60px;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.9;
+    font-family: poppins, sans-serif;
+    font-weight: normal;
+}
+
+.email, .number, .submit {
+    width: 148px;
+    height: 40px;
+    padding: 0 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+}
+
+.submit {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+.submit:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+footer {
+    margin-top: -10px;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #260733;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.social {
+    display: flex;
+}
+
+.social a {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffffc7;
+    border-radius: 50%;
+    margin: 15px 10px;
+    color:  black;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.social a:hover {
+    background-color: black;
+    color: #ffffffc7;
+    transition: .2s;
+}
+
+.end {
+    position: absolute;
+    color: #ffffffc7;
+    bottom: 35px;
+    font-size: 14px;
+    font-family: lato, sans-serif;
 }
